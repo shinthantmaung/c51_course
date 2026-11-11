@@ -1,6 +1,0 @@
-Aurora|Information Disclosure|access confidential customer information|15
-Aurora|Tampering|modify customer's sensitive data for malicious purposes|15
-lambda|Elevation Of Privilege|assume over-privileged execution role to modify IAM policy|12
-EC2|Information Disclosure|access orgainization's internal data|9
-lambda|Information Disclosure|access internal data from env var and logs|9
-EC2|Tampering|modify the running code to the attacker's advantage|6
