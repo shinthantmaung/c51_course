@@ -1,4 +1,7 @@
-## assets
+## Architecture
+![System Architecture](../../images/crunch_notes_full.png)
+
+## Assets
 | asset_id | name | asset_type | cloud | owner | data_class | notes |
 |---|---|---|---|---|---|---|
 | 1 | User (Browser/Mobile) | external | n/a | End Users | confidential | User credentials, session tokens, personal files being uploaded. |
