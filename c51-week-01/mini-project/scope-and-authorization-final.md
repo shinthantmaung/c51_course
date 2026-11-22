@@ -12,7 +12,9 @@ I, **Shin Thant Maung**, as the owner of the account(s) listed below, authorize 
 - Any real personal data — my own or anyone else's. All data used in this course's exercises is fictional or synthetic.
 
 ## **Techniques allowed / excluded**
-Enumeration, misconfiguration analysis, and controlled exploitation techniques taught in this course are **authorized** strictly against the in-scope assets listed above. Malware execution and reverse-engineering exercises, if any occur in later weeks, are **authorized** only within an isolated, network-disconnected sandbox VM, never on the account owner's primary machine or network. Denial-of-service techniques against any shared, multi-tenant, or free-tier provider infrastructure ,that could degrade service for other tenants, are strictly **unauthorized**
+- Enumeration, misconfiguration analysis, and controlled exploitation techniques taught in this course are **authorized** strictly against the in-scope assets listed above. 
+- Malware execution and reverse-engineering exercises, if any occur in later weeks, are **authorized** only within an isolated, network-disconnected sandbox VM, never on the account owner's primary machine or network. 
+- Denial-of-service techniques against any shared, multi-tenant, or free-tier provider infrastructure ,that could degrade service for other tenants, are strictly **unauthorized**
 
 
 ## **Data Handling**
