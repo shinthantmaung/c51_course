@@ -75,13 +75,13 @@
 | 8 | Elevation of Privilege | Web app's DB access role is scoped more broadly than it needs | 4 | 5 | 20 | Enforce Principle of Least Privilege — scope the role only to specific DB actions (e.g. rds-db:connect). | Web App (Compute) \| Managed Postgres (PaaS) |
 | 20 | Information Disclosure | Deployment artifacts containing API keys are not properly stored | 4 | 4 | 16 | Never hardcode secrets; inject secrets at runtime using a Secrets Manager (e.g. Vault, AWS Secrets Manager); scan repos for secrets before committing. | CI/CD pipeline \| Web App (Compute) |
 | 11 | Information Disclosure | Uploads bucket could be set to public, exposing data to everyone on the internet | 4 | 4 | 16 | Enable S3 Block Public Access at the account level. Serve files using time-limited signed URLs, not public ACLs. | Uploads Bucket |
-| 7 | Spoofing | Attacker uses a stolen web app role token or a DB user's static creds; performs SQLi; DB is publicly accessible | 4 | 4 | 16 | Use IAM database authentication with short-lived tokens (15 min) instead of static passwords; store remaining secrets in a Secrets Manager; restrict DB network access to private subnets only; use parameterized queries; encrypt data at rest (TDE or disk-level encryption). | Web App (Compute) \| Managed Postgres (PaaS) |
+| 7 | Spoofing,Tampering, Information Disclosure | Attacker uses a stolen web app role token or a DB user's static creds; performs SQLi; DB is publicly accessible | 4 | 4 | 16 | Use IAM database authentication with short-lived tokens (15 min) instead of static passwords; store remaining secrets in a Secrets Manager; restrict DB network access to private subnets only; use parameterized queries; encrypt data at rest (TDE or disk-level encryption). | Web App (Compute) \| Managed Postgres (PaaS) |
 | 14 | Elevation of Privilege | Web App's S3 access role might be over-permissioned, allowing the user to generate privileged signed URLs | 3 | 5 | 15 | Apply least privilege to the web app's IAM role. | Web App (Compute) \| Uploads Bucket |
 | 6 | Elevation of Privilege | Privileged users' tokens get stolen via XSS | 3 | 5 | 15 | Use short-lived tokens; require MFA for privileged actions; isolate admin privileges in a separate, highly secure context. | User (Browser/Mobile) \| Load Balancer \| Web App (Compute) |
 | 19 | Spoofing | CI/CD pipeline gets compromised via a malicious pull request | 3 | 4 | 12 | Enforce branch protection and mandatory code review for PRs. | CI/CD pipeline \| Web App (Compute) |
 | 16 | Repudiation | Malicious admin tampering with web app code or the DB is not logged | 3 | 4 | 12 | Send admin logs to an immutable, write-once-read-many (WORM) storage bucket in a separate, highly restricted security account. | Admin (Ops engineer) IAM role \| Web App (Compute) \| Managed Postgres (PaaS) |
 
 ## Threats with no mitigation controls yet
-│ threat_id │ stride_category │ description │ likelihood │ impact │
+| threat_id | stride_category | description | likelihood | impact |
 |-----------|-----------------|-------------|------------|--------|
 |  |  | --No Threats without mitigation controls-- |  |  |
