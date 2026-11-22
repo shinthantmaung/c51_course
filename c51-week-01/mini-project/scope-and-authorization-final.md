@@ -2,7 +2,7 @@
 I, **Shin Thant Maung**, as the owner of the account(s) listed below, authorize myself to perform security testing, configuration review, and defensive exercises against these accounts and the resources within them, for the sole purpose of completing the C51 Crunch Cloud Security course.**(effective 8/11/2026 through course completion)**
 
 ## **In-Scope Assets**
-- **accounts**: 675006621259
+- **accounts**: 675006621259 *(AWS)*
 - All resources created by me within the account(s) listed above, including but not limited to compute instances, storage buckets, IAM roles/policies, databases, and networking configuration
 - The lab workload I diagramed as part of challenge-01/week-01 is also authorized.
 
@@ -20,5 +20,5 @@ no real personal, customer, or third-party data will ever be stored, processed, 
 
 *Signed By* 
 **Shin Thant Maung**
-22.11.26
+(22.11.26)
 
