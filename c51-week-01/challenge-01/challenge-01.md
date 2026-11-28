@@ -103,7 +103,7 @@ Note: This one seems difficult to spot since the traffic is not initiating from 
 | 35 | Background Worker | Spoofing | Publisher and subscriber are not properly authenticated | 4 | 4 | Customer | Queue level access policy with strictly scoped API and worker IAM roles. |
 | 36 | Background Worker | DoS | Malicious message crashes the background worker | 3 | 2 | Customer | Properly sanitize the message schema and send the message to Dead Letter Queue if fail to sanitize properly. |
 
-
+## Insights
 ### Top 10 Risks (Ordered by Risk Score)
 
 | threat_id | stride_category | description | likelihood | impact | risk_score | mitigating_control | affected_assets |
