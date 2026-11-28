@@ -1,0 +1,70 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAthenaWorkgroupAndExecution",
+            "Effect": "Allow",
+            "Action": [
+                "athena:StartQueryExecution",
+                "athena:GetQueryExecution",
+                "athena:GetQueryResults",
+                "athena:GetWorkGroup",
+                "athena:StopQueryExecution"
+            ],
+            "Resource": "arn:aws:athena:us-east-1:100200300400:workgroup/analytics"
+        },
+        {
+            "Sid": "AllowGlueCatalogReadAccess",
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:GetPartitions"
+            ],
+            "Resource": [
+                "arn:aws:glue:us-east-1:100200300400:catalog",
+                "arn:aws:glue:us-east-1:100200300400:database/*",
+                "arn:aws:glue:us-east-1:100200300400:table/*"
+            ]
+        },
+        {
+            "Sid": "AllowS3ReadSourceData",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::crunchlabs-reports/q2.csv",
+                "arn:aws:s3:::crunchlabs-reports/q3.csv"
+            ]
+        },
+        {
+            "Sid": "AllowS3ListSourceBucket",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::crunchlabs-reports"
+        },
+        {
+            "Sid": "AllowS3WriteQueryResults",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": [
+		"arn:aws:s3:::crunchlabs-athena-results",
+	        "arn:aws:s3:::crunchlabs-athena-results/*"
+	    ]
+        },
+        {
+            "Sid": "AllowEC2DescribeInstances",
+            "Effect": "Allow",
+            "Action": "ec2:DescribeInstances",
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAthenaAndGlue",
+            "Effect": "Allow",
+            "Action": [
+                "athena:StartQueryExecution",
+                "athena:GetQueryExecution",
+                "athena:GetQueryResults",
+                "athena:GetWorkGroup",
+                "athena:StopQueryExecution",
+                "glue:GetDatabase",
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:GetPartitions"
+            ],
+            "Resource": [
+                "arn:aws:athena:us-east-1:100200300400:workgroup/analytics",
+                "arn:aws:glue:us-east-1:100200300400:catalog",
+                "arn:aws:glue:us-east-1:100200300400:database/*",
+                "arn:aws:glue:us-east-1:100200300400:table/*"
+            ]
+        },
+        {
+            "Sid": "AllowReadOnlyAccessToSourceData",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::crunchlabs-reports",
+                "arn:aws:s3:::crunchlabs-reports/*"
+            ]
+        },
+        {
+            "Sid": "AllowReadWriteToAthenaResults",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": [
+                "arn:aws:s3:::crunchlabs-athena-results/*",
+                "arn:aws:s3:::crunchlabs-athena-results"
+            ]
+        },
+        {
+            "Sid": "AllowEC2DescribeInstances",
+            "Effect": "Allow",
+            "Action": "ec2:DescribeInstances",
+            "Resource": "*"
+        }
+    ]
+}
